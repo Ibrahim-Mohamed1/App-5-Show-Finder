@@ -11,11 +11,13 @@ class DataProvider extends Component {
     }
 
     getShow = (show)=> {
-        axios.get(`https://vschool-cors.herokuapp.com?url=https://tastedive.com/api/similar?q=${show}&k=334753-IbrahimM-B36QZN4K`).then(res => {
+        axios.get(`https://vschool-cors.herokuapp.com?url=https://tastedive.com/api/similar?q=${show}&k=${process.env.REACT_APP_KEY}`).then(res => {
             this.setState({
                 show: res.data
             })
-        })
+        }).catch(function (error) { 
+            window.location.reload() 
+        });
     }
 
     render() {
