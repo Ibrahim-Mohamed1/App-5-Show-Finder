@@ -11,7 +11,7 @@ class DataProvider extends Component {
     }
 
     getShow = (show)=> {
-        axios.get(`https://vschool-cors.herokuapp.com?url=https://tastedive.com/api/similar?q=${show}&k=${process.env.REACT_APP_KEY}`).then(res => {
+        axios.get(`https://vschool-cors.herokuapp.com?url=https://tastedive.com/api/similar?q=${show}&k=${process.env.KEY}`).then(res => {
             this.setState({
                 show: res.data
             })
